@@ -1,1 +1,0 @@
-<a href="/pg/omni_inviter/invite"> Click Here</a>
