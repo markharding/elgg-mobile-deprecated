@@ -35,9 +35,9 @@
 	}
 	//get view from the default view if we dont have them
 	elgg_register_viewtype_fallback('mobile');
-	register_elgg_event_handler('init','system','mobile_init');
+	elgg_register_event_handler('init','system','mobile_init');
 //elgg_register_simplecache_view(mobile);
-	register_action("mobile/login",false,$CONFIG->pluginspath . "mobile/actions/login.php", true);
+	elgg_register_action("mobile/login",$CONFIG->pluginspath . "mobile/actions/login.php",'public');
 		
 
 ?>
