@@ -15,4 +15,4 @@ echo "</a>";
 
 // elgg tools menu
 // need to echo this empty view for backward compatibility.
-echo elgg_view("navigation/topbar_tools");
+//echo elgg_view("navigation/topbar_tools");
