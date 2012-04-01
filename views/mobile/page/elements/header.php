@@ -11,6 +11,6 @@ echo elgg_view('page/elements/header_logo', $vars);
 //echo elgg_view('core/account/login_dropdown');
 
 // insert site-wide navigation
-if (elgg_is_logged_in()): 
-echo elgg_view_menu('site');
-endif; 
+//if (elgg_is_logged_in()): 
+echo elgg_view_menu('mobile');
+//endif; 
