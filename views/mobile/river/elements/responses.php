@@ -1,7 +1,17 @@
 <?php
 /**
  * River item footer
+ *
+ * @uses $vars['item'] ElggRiverItem
+ * @uses $vars['responses'] Alternate override for this item
  */
+
+// allow river views to override the response content
+$responses = elgg_extract('responses', $vars, false);
+if ($responses) {
+	echo $responses;
+	return true;
+}
 
 $item = $vars['item'];
 $object = $item->getObjectEntity();
@@ -40,6 +50,7 @@ if ($comments) {
 		$params = array(
 			'href' => $url,
 			'text' => elgg_echo('river:comments:more', array($num_more_comments)),
+			'is_trusted' => true,
 		);
 		$link = elgg_view('output/url', $params);
 		echo "<div class=\"elgg-river-more\">$link</div>";
