@@ -3,6 +3,8 @@
 *************************************** */
 .elgg-module {
 	margin-bottom: 20px;
+        padding:5px;
+
 }
 
 /* Aside */
