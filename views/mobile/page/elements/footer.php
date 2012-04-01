@@ -23,8 +23,13 @@ echo '<div class="mts clearfloat right">';
 echo '&copy; Copyright kramnorth 2011';
 echo '</div>';
 
-if (elgg_is_logged_in()): 
 echo '<div class="mts clearfloat right">';
+echo elgg_view('output/url', array(
+	'href' => "{$vars['url']}mod/mobile/pages/desktop.php",
+	'text' => "Desktop | ",
+	'class' => '',
+));
+if (elgg_is_logged_in()): 
 echo elgg_view('output/url', array(
 	'href' => "{$vars['url']}settings/user",
 	'text' => "Settings | ",
