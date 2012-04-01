@@ -1,0 +1,5 @@
+<?php
+if (empty($vars['title'])) {$title = $vars['config']->sitename;} else if (empty($vars['config']->sitename)) {$title = $vars['title'];
+} else {$title = $vars['config']->sitename . " | Mobile |  " . $vars['title'];}
+?><!DOCTYPE html PUBLIC "-//WAPFORUM//DTD XHTML Mobile 1.0//EN" "http://www.wapforum.org/DTD/xhtml-mobile10.dtd"> 
+<html xmlns="http://www.w3.org/1999/xhtml"><head><title><?php echo $title; ?></title><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"/><meta name="apple-mobile-web-app-capable" content="yes" /><link rel="stylesheet" href="<?php echo $vars['url']; ?>_css/css.php?lastcache=<?php echo $vars['config']->lastcache; ?>&viewtype=mobile&view=mobile" type="text/css" /><?php echo elgg_view('metatags',$vars);	?></head><body onorientationchange="updateOrientation()" onload="setTimeout(scrollTo, 0, 0, 1)">

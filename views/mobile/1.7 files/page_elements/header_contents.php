@@ -1,0 +1,1 @@
+<div id="page_container"><div id="page_wrapper"><div id="layout_header"><div id="wrapper_header"><div id="logo"><a href="/pg/dashboard/"><img src="<?php echo $vars['url']; ?>_graphics/elgg_toolbar_logo.gif" /></a></div><div class="navigation"><?php require("elgg_topbar.php");?></div></div><!-- /#wrapper_header --></div><!-- /#layout_header -->
