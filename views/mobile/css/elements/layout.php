@@ -11,39 +11,6 @@
  */
 ?>
 
-/* ***************************************
-	PAGE LAYOUT
-*************************************** */
-/***** DEFAULT LAYOUT ******/
-.elgg-page-default .elgg-page-header > .elgg-inner {
-	width: 100%;
-	margin: 0 auto;
-	height: 30px;
-    overflow:hidden;
-}
-.elgg-page-default .elgg-page-body > .elgg-inner {
-	width: 100%;
-	margin: 0 auto;
-}
-.elgg-page-default .elgg-page-footer > .elgg-inner {
-	width: 100%;
-	margin: 0 auto;
-	padding: 5px 0;
-	border-top: 1px solid #DEDEDE;
-}
-
-/***** TOPBAR ******/
-.elgg-page-topbar {
-	background: #333333 url(<?php echo elgg_get_site_url(); ?>_graphics/toptoolbar_background.gif) repeat-x top left;
-	border-bottom: 1px solid #000000;
-	width:100%;
-	position: relative;
-	height: 40px;
-	z-index: 9000;
-}
-.elgg-page-topbar > .elgg-inner {
-	padding: 0 10px;
-}
 
 /***** PAGE MESSAGES ******/
 .elgg-system-messages {
@@ -60,31 +27,18 @@
 	margin: 0;
 }
 
-/***** PAGE HEADER ******/
-.elgg-page-header {
-	position: relative;
-	background: #4690D6 url(<?php echo elgg_get_site_url(); ?>_graphics/header_shadow.png) repeat-x bottom left;
-}
-.elgg-page-header > .elgg-inner {
-	position: relative;
-}
 
 /***** PAGE BODY LAYOUT ******/
 .elgg-layout {
 	min-height: 360px;
 }
 .elgg-layout-one-column {
-	padding: 10px 0;
+	padding: 0;
 }
-/*.elgg-layout-one-sidebar {
-	background: transparent url(<?php echo elgg_get_site_url(); ?>_graphics/sidebar_background.gif) repeat-y right top;
-}
-.elgg-layout-two-sidebar {
-	background: transparent url(<?php echo elgg_get_site_url(); ?>_graphics/two_sidebar_background.gif) repeat-y right top;
-}*/
+
 .elgg-sidebar {
 	position: relative;
-	padding: 10px 0px 10px 10px;
+	padding: 5px 0px;
 	float: right;
 	width: 100%;
 	margin: 0 0 0 10px;
@@ -99,7 +53,7 @@
 .elgg-main {
 	position: relative;
 	min-height: 360px;
-	padding: 10px;
+	padding: 5px;
 }
 .elgg-main > .elgg-head {
 	padding-bottom: 3px;

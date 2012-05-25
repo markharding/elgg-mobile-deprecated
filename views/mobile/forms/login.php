@@ -19,10 +19,10 @@
 <?php echo elgg_view('login/extend'); ?>
 
 <div>
-	<?php echo elgg_view('input/submit', array('value' => elgg_echo('login'))); ?>
+	<?php echo elgg_view('input/submit', array('value' => elgg_echo('login'), 'data-role' =>'none')); ?>
 
 	<label class="right mtm">
-		<input type="checkbox" name="persistent" value="true" />
+		<input type="checkbox" name="persistent" value="true" data-role='none'/>
 		<?php echo elgg_echo('user:persistent'); ?>
 	</label>
 	

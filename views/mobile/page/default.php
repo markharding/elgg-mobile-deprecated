@@ -1,29 +1,4 @@
 <?php
-/**
- * Elgg pageshell
- * The standard HTML page shell that everything else fits into
- *
- * @package Elgg
- * @subpackage Core
- *
- * @uses $vars['title'] The page title
- * @uses $vars['body'] The main content of the page
- * @uses $vars['sysmessages'] A 2d array of various message registers, passed from system_messages()
- */
-
-// backward compatability support for plugins that are not using the new approach
-// of routing through admin. See reportedcontent plugin for a simple example.
-if (elgg_get_context() == 'admin') {
-	elgg_deprecated_notice("admin plugins should route through 'admin'.", 1.8);
-	elgg_admin_add_plugin_settings_menu();
-	elgg_unregister_css('elgg');
-	echo elgg_view('page/shells/admin', $vars);
-	return true;
-}
-
-// Set the content type
-header("Content-type: text/html; charset=UTF-8");
-
 ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
@@ -31,35 +6,66 @@ header("Content-type: text/html; charset=UTF-8");
 <?php echo elgg_view('page/elements/head', $vars); ?>
 </head>
 <body>
-<div class="elgg-page elgg-page-default">
-	<div class="elgg-page-messages">
-		<?php echo elgg_view('page/elements/messages', array('object' => $vars['sysmessages'])); ?>
-	</div>
-	
-	
-	<div class="elgg-page-topbar">
-		<div class="elgg-inner">
-			<?php echo elgg_view('page/elements/topbar', $vars); ?>
-		</div>
-	</div>
-	
-	
-	<div class="elgg-page-header">
-		<div class="elgg-inner">
-			<?php echo elgg_view('page/elements/header', $vars); ?>
-		</div>
-	</div>
-	<div class="elgg-page-body">
-		<div class="elgg-inner">
-			<?php echo elgg_view('page/elements/body', $vars); ?>
-		</div>
-	</div>
-	<div class="elgg-page-footer">
-		<div class="elgg-inner">
-			<?php echo elgg_view('page/elements/footer', $vars); ?>
-		</div>
-	</div>
-</div>
+<div data-role="page" id="page">
+        <div class="elgg-page-messages">
+            <?php echo elgg_view('page/elements/messages', array('object' => $vars['sysmessages'])); ?>
+        </div>
+        
+       <div data-role="header" class="elgg-header" data-position="fixed">
+      		<?php echo elgg_view('page/elements/header_logo', $vars); ?>
+            
+            <a href="#menu" data-transition="slidedown">Menu</a>
+       </div> 
+       
+        <div data-role="content">
+                <?php echo elgg_view('page/elements/body', $vars); ?>
+            </div>
+</div><!--end page-->
+	<div data-role="page" id="menu">
+
+	<div data-role="header" class="elgg-header" data-position="fixed">
+		<h1>Menu</h1>
+		<a href="#page">Back</a>
+	</div><!-- /header -->
+
+	<div data-role="content">	
+		<ul data-role="listview" data-inset="false" >
+			<?php 
+			//This needs it own function, should not be loaded from here
+			$menu_name= 'site';
+			 
+			$vars['name'] = $menu_name;
+			$sort_by = elgg_extract('sort_by', $vars, 'text');
+
+				 if (isset($CONFIG->menus[$menu_name])) {
+					 $menu = $CONFIG->menus[$menu_name];
+				 } else {
+					 $menu = array();
+				 }
+ 
+				 // Give plugins a chance to add menu items just before creation.
+				 // This supports dynamic menus (example: user_hover).
+				 $menu = elgg_trigger_plugin_hook('register', "menu:$menu_name", $vars, $menu);
+ 
+				$builder = new ElggMenuBuilder($menu);
+				$vars['menu'] = $builder->getMenu($sort_by);
+				$vars['selected_item'] = $builder->getSelected();
+ 
+				 // Let plugins modify the menu
+				 $vars['menu'] = elgg_trigger_plugin_hook('prepare', "menu:$menu_name", $vars, $vars['menu']);
+			
+				$default_items = elgg_extract('default', $vars['menu'], array());
+					foreach ($default_items as $menu_item) {
+							echo elgg_view('navigation/menu/elements/item', array('item' => $menu_item));
+					}
+					?>
+                    
+                    <li>Logout</li>
+			
+		</ul>			
+	</div><!-- /content -->
+
+</div><!-- /page -->
 <?php echo elgg_view('page/elements/foot'); ?>
 </body>
 </html>
