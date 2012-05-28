@@ -11,7 +11,7 @@
             <?php echo elgg_view('page/elements/messages', array('object' => $vars['sysmessages'])); ?>
         </div>
         
-       <div data-role="header" class="elgg-header" data-position="fixed">
+       <div data-role="header" class="elgg-header">
       		<?php echo elgg_view('page/elements/header_logo', $vars); ?>
             
             <a href="#menu" data-transition="slidedown">Menu</a>
@@ -23,7 +23,7 @@
 </div><!--end page-->
 	<div data-role="page" id="menu">
 
-	<div data-role="header" class="elgg-header" data-position="fixed">
+	<div data-role="header" class="elgg-header" >
 		<h1>Menu</h1>
 		<a href="#page">Back</a>
 	</div><!-- /header -->
