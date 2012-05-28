@@ -36,6 +36,7 @@ $release = get_version(true);
 	<script>
 		$(document).bind("mobileinit", function(){
 			 $.mobile.defaultPageTransition = 'none';
+			 
 		});
 	</script>
 	<script src="<?php echo elgg_get_site_url(); ?>mod/mobile/lib/jquery_mobile/jquery.mobile-1.1.0.min.js"></script> 

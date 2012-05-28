@@ -11,9 +11,9 @@ margin:auto;
 width:100%;
 height:50px;
 }
-.logo_centre img{
-width:60px;
-padding-top:5px;
+img.logo_centre{
+height:22px;
+width:42px;
  display: block;
   margin-left: auto;
   margin-right: auto;
@@ -21,3 +21,11 @@ padding-top:5px;
 .elgg-menu-extras-default{
 display:none;
 }
+.elgg-header{
+	background-color:#999;
+    }
+.elgg-header .ui-btn-corner-all {
+	-moz-border-radius: 				0 /*{global-radii-buttons}*/;
+	-webkit-border-radius: 			0 /*{global-radii-buttons}*/;
+	border-radius: 					0 /*{global-radii-buttons}*/;
+    }
