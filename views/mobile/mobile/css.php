@@ -29,3 +29,9 @@ display:none;
 	-webkit-border-radius: 			0 /*{global-radii-buttons}*/;
 	border-radius: 					0 /*{global-radii-buttons}*/;
     }
+    
+/*INPUT FIELD AND BUTTON MODS */
+fieldset > div {
+	margin-bottom: 15px;
+    padding-left:10px;
+}
