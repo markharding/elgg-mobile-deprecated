@@ -64,10 +64,14 @@
 					foreach ($all_items as $menu_item) {
 							echo elgg_view('navigation/menu/elements/item', array('item' => $menu_item));
 					}
+					
+				//Loggedin?
+				$user = elgg_get_logged_in_user_entity();
+				if($user){
 					?>
-                    <li><a href="<?php echo elgg_get_site_url(); ?>profile/">Profile</a></li>
+                    <li><a href="<?php echo elgg_get_site_url(); ?>profile/<?php echo $user->username;?>">Profile</a></li>
                     <li><a href="<?php echo elgg_get_site_url(); ?>action/logout" data-ajax="false"> Logout</a></li>
-			
+                <?php } ?>
 		</ul>			
 	</div><!-- /content -->
 

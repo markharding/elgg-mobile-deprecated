@@ -35,3 +35,15 @@ fieldset > div {
 	margin-bottom: 15px;
     padding-left:10px;
 }
+
+/* Widgets settings 
+ */
+.elgg-menu.elgg-menu-widget.elgg-menu-hz.elgg-menu-widget-default{
+	display:none;
+}
+
+/* Widgets layouts
+ */
+.elgg-col-1of3, .elgg-col-2of3, .elgg-col-3of3{
+	width:100%;
+    }
