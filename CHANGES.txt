@@ -1,0 +1,1 @@
+CHANGES FROM 1.6 to 1.8) Now works on elgg 1.8
