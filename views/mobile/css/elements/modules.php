@@ -148,13 +148,14 @@
 }
 .elgg-module-widget > .elgg-head {
 	background-color: #eeeeee;
-	height: 26px;
+	height: 24px;
 	overflow: hidden;
 }
 .elgg-module-widget > .elgg-head h3 {
 	float: left;
 	padding: 4px 45px 0 20px;
 	color: #666;
+    font-size:12px;
 }
 .elgg-module-widget.elgg-state-draggable > .elgg-head {
 	cursor: move;
