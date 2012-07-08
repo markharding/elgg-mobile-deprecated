@@ -40,6 +40,7 @@ fieldset > div {
  */
 .elgg-menu.elgg-menu-widget.elgg-menu-hz.elgg-menu-widget-default{
 	display:none;
+<<<<<<< HEAD
 }
 
 /* Widgets layouts
@@ -47,3 +48,6 @@ fieldset > div {
 .elgg-col-1of3, .elgg-col-2of3, .elgg-col-3of3{
 	width:100%;
     }
+=======
+}
+>>>>>>> ed4967aef9fc04ffb397cf013d778240d3c4deac
