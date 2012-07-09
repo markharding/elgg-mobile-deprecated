@@ -24,6 +24,8 @@
 		elgg_register_plugin_hook_handler('index', 'system','main_handler');
 		}
 		
+		elgg_register_simplecache_view('mobile');
+		
 
     }
 	
