@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <plugin_manifest>
         <field key="author" value="Kramnorth" />
-        <field key="version" value="2.0" />
+        <field key="version" value="2.0 - BETA" />
         <field key="description" value="Extends our Elgg site into a HTML5 mobile web app. (works on devices that do not support HTML5 too) " />
         <field key="website" value="http://www.kramnorth.com/" />
         <field key="copyright" value="(C) Kramnorth 2012" />
