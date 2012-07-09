@@ -27,8 +27,16 @@
 
     }
 	
-function main_handler() {
-	require_once dirname(__FILE__) . '/pages/main.php';
+function main_handler($hook, $type, $return, $params) {
+	if ($return == true) {
+		// another hook has already replaced the front page
+		return $return;
+	}
+	
+	if(!include_once(dirname(__FILE__) . '/pages/main.php')){
+		return false;
+	}
+	
 	return true;
 }
 	
