@@ -24,11 +24,21 @@
 		elgg_register_plugin_hook_handler('index', 'system','main_handler');
 		}
 		
+		elgg_register_simplecache_view('mobile');
+		
 
     }
 	
-function main_handler() {
-	require_once dirname(__FILE__) . '/pages/main.php';
+function main_handler($hook, $type, $return, $params) {
+	if ($return == true) {
+		// another hook has already replaced the front page
+		return $return;
+	}
+	
+	if(!include_once(dirname(__FILE__) . '/pages/main.php')){
+		return false;
+	}
+	
 	return true;
 }
 	

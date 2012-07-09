@@ -1,1 +1,4 @@
-CHANGES FROM 1.6 to 1.8) Now works on elgg 1.8
+NEW IN 2.0
+
+- Complete redesign.
+- HTML5 support.
